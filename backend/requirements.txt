@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+python-multipart
+google-genai
+supabase
+pypdf
+python-dotenv
+langchain-text-splitters
