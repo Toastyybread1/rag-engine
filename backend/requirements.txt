@@ -6,3 +6,4 @@ supabase
 pypdf
 python-dotenv
 langchain-text-splitters
+python-dotenv
