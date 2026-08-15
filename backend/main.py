@@ -14,9 +14,17 @@ from pydantic import BaseModel
 
 #supabase
 from supabase import create_client, Client
-
+from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
+#allow next.js to communicate with fastAPI 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"], # Your Next.js port
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 load_dotenv() #load enviroment vars from .env file
 ai = genai.Client(api_key=os.getenv("GEMINI_API_KEY")) 
 
@@ -90,7 +98,6 @@ async def query_rag(request: QueryRequest):
             {"filename": chunk["filename"], "similarity": chunk["similarity"]} 
             for chunk in matched_chunks
         ]
-    }
 #set the endpoint for uploading a PDF file
 @app.post("/upload")
 # file is objects name, class is UploadFile
