@@ -1,6 +1,6 @@
 A RAG engine that converts your pdf into text, stores it in a vector database and answers questions optimally by searching the vector database
 
-
+Used Typescript for the frontend, python with FastAPI and Supabase for the backend.
 
 
 
