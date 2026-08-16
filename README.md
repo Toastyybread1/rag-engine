@@ -1,4 +1,4 @@
-A RAG engine that converts your pdf into text, stores it in a vector database and answers questions optimally by searching the vector database
+This tool helps bypass LLM context windows by converting your PDF into text, embeds and stores the content inside a vector database, then allows the user to ask questions about the document — the RAG engine uses vector search to find the exact paragraphs relevant to answer the users question, thus being more efficient and saves more tokens. 
 
 Used Typescript for the frontend, python with FastAPI and Supabase for the backend.
 
